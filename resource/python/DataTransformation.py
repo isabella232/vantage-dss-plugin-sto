@@ -1,5 +1,4 @@
 import dataiku
-from dataiku import os
 import json
 import os
 import logging

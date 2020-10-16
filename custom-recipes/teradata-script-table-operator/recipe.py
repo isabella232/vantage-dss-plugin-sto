@@ -352,7 +352,12 @@ if(performFileLoad):
 
 if(installAdditionalFilesArray != []):
     print('Installing additional files...')
-    executor.query_to_df(edTxn,[stTxn,setSessionQuery]+installAdditionalFilesArray)
+    if autocommit:
+        placeholderQuery = "SELECT 1;" #Placeholder so that a query is still executed.
+        executor.query_to_df(placeholderQuery,[setSessionQuery]+installAdditionalFilesArray);
+    else:
+        executor.query_to_df(edTxn,[stTxn,setSessionQuery]+installAdditionalFilesArray)
+
     
 # Recipe outputs                                                          
 print('setSessionQuery')

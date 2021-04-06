@@ -74,6 +74,11 @@ III. Limitations
 1. The plugin currently only supports Advanced SQL Engine datasets as input and
    output.
 
+2. Due to the mode the plugin creates output tables, the function output is
+   checked for duplicate rows. If any duplicate rows are found, then they are
+   removed from the output table. This behavior is not adjustable in the
+   present version of the plugin.
+
 
 IV. References
 --------------
@@ -81,9 +86,9 @@ IV. References
 For additional information on the Teradata Vantage Vantage SCRIPT Table Operator
 search for the following on docs.teradata.com:
 
-1. "Teradata Vantage SQL Operators and User-Defined Functions"
-2. "Teradata Vantage User Guide"
-3. “R And Python Analytics with SCRIPT Table Operator” (sign-in needed)
+1. "Teradata Vantage SQL Operators and User-Defined Functions".
+2. "Teradata Vantage User Guide".
+3. “R And Python Analytics with SCRIPT Table Operator” (sign-in needed).
 
 
 V. Changelog
